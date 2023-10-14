@@ -1,12 +1,15 @@
-from typing import Union
-from fastapi import FastAPI, Depends, HTTPException
+from fastapi import Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 from fastapi import FastAPI, HTTPException
 import httpx
 from sqlalchemy.orm import Session
-from .models import Question
-from .db import get_db
+
+from modules.models import Question
+from modules.db import get_db
+import sys
+
+sys.path.append('.')
 
 app = FastAPI()
 
